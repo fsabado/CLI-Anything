@@ -8,8 +8,8 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 <p align="center">
   <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick_Start-5_min-blue?style=for-the-badge" alt="Quick Start"></a>
   <a href="https://hkuds.github.io/CLI-Anything/hub/"><img src="https://img.shields.io/badge/CLI_Hub-Browse_%26_Install-ff69b4?style=for-the-badge" alt="CLI Hub"></a>
-  <a href="#-demonstrations"><img src="https://img.shields.io/badge/Demos-13_Apps-green?style=for-the-badge" alt="Demos"></a>
-  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-1%2C588_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
+  <a href="#-demonstrations"><img src="https://img.shields.io/badge/Demos-15_Apps-green?style=for-the-badge" alt="Demos"></a>
+  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-1%2C707_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -375,7 +375,7 @@ Each installed CLI ships with a [`SKILL.md`](#-skillmd-generation) inside the Py
 | Category | How to be Agent-native | Notable Examples |
 |----------|----------------------|----------|
 | **📂 GitHub Repositories** | Transform any open-source project into agent-controllable tools through automatic CLI generation | VSCodium, WordPress, Calibre, Zotero, Joplin, Logseq, Penpot, Super Productivity |
-| **🤖 AI/ML Platforms** | Automate model training, inference pipelines, and hyperparameter tuning through structured commands | Stable Diffusion WebUI, ComfyUI, InvokeAI, Text-generation-webui, Open WebUI, Fooocus, Kohya_ss, AnythingLLM, SillyTavern |
+| **🤖 AI/ML Platforms** | Automate model training, inference pipelines, and hyperparameter tuning through structured commands | Stable Diffusion WebUI, ComfyUI, Ollama, InvokeAI, Text-generation-webui, Open WebUI, Fooocus, Kohya_ss, AnythingLLM, SillyTavern |
 | **📊 Data & Analytics** | Enable programmatic data processing, visualization, and statistical analysis workflows | JupyterLab, Apache Superset, Metabase, Redash, DBeaver, KNIME, Orange, OpenSearch Dashboards, Lightdash |
 | **💻 Development Tools** | Streamline code editing, building, testing, and deployment processes via command interfaces | Jenkins, Gitea, Hoppscotch, Portainer, pgAdmin, SonarQube, ArgoCD, OpenLens, Insomnia, Beekeeper Studio |
 | **🎨 Creative & Media** | Control content creation, editing, and rendering workflows programmatically | Blender, GIMP, OBS Studio, Audacity, Krita, Kdenlive, Shotcut, Inkscape, Darktable, LMMS, Ardour |
@@ -400,7 +400,7 @@ AI agents are great at reasoning but terrible at using real professional softwar
 | 💸 "UI automation breaks constantly" | No screenshots, no clicking, no RPA fragility. Pure command-line reliability with structured interfaces |
 | 📊 "Agents need structured data" | Built-in JSON output for seamless agent consumption + human-readable formats for debugging |
 | 🔧 "Custom integrations are expensive" | One Claude plugin auto-generates CLIs for ANY codebase through proven 7-phase pipeline |
-| ⚡ "Prototype vs Production gap" | 1,588+ tests with real software validation. Battle-tested across 13 major applications |
+| ⚡ "Prototype vs Production gap" | 1,707+ tests with real software validation. Battle-tested across 15 major applications |
 
 ---
 
@@ -501,7 +501,7 @@ SKILL.md files are auto-generated during Phase 6.5 of the pipeline using `skill_
 CLI-Anything works on any software with a codebase — no domain restrictions or architectural limitations.
 
 ### 🏭 Professional-Grade Testing
-Tested across 13 diverse, complex applications spanning creative, productivity, communication, diagramming, AI image generation, and AI content generation domains previously inaccessible to AI agents.
+Tested across 15 diverse, complex applications spanning creative, productivity, communication, diagramming, AI image generation, AI content generation, and local LLM inference domains previously inaccessible to AI agents.
 
 ### 🎨 Diverse Domain Coverage
 From creative workflows (image editing, 3D modeling, vector graphics) to production tools (audio, office, live streaming, video editing).
@@ -602,6 +602,13 @@ Each application received complete, production-ready CLI interfaces — not demo
 <td align="center">✅ 50</td>
 </tr>
 <tr>
+<td align="center"><strong>🧠 NotebookLM</strong></td>
+<td>AI Research Assistant</td>
+<td><code>cli-anything-notebooklm</code></td>
+<td>NotebookLM CLI wrapper (experimental)</td>
+<td align="center">✅ 21</td>
+</tr>
+<tr>
 <td align="center"><strong>🖼️ ComfyUI</strong></td>
 <td>AI Image Generation</td>
 <td><code>cli-anything-comfyui</code></td>
@@ -609,12 +616,19 @@ Each application received complete, production-ready CLI interfaces — not demo
 <td align="center">✅ 70</td>
 </tr>
 <tr>
+<td align="center"><strong>🦙 Ollama</strong></td>
+<td>Local LLM Inference</td>
+<td><code>cli-anything-ollama</code></td>
+<td>Ollama REST API</td>
+<td align="center">✅ 98</td>
+</tr>
+<tr>
 <td align="center" colspan="4"><strong>Total</strong></td>
-<td align="center"><strong>✅ 1,588</strong></td>
+<td align="center"><strong>✅ 1,707</strong></td>
 </tr>
 </table>
 
-> **100% pass rate** across all 1,588 tests — 1,138 unit tests + 450 end-to-end tests.
+> **100% pass rate** across all 1,707 tests — 1,246 unit tests + 461 end-to-end tests.
 
 ---
 
@@ -643,9 +657,11 @@ zoom           22 passed  ✅   (22 unit + 0 e2e)
 drawio        138 passed  ✅   (116 unit + 22 e2e)
 mermaid        10 passed  ✅   (5 unit + 5 e2e)
 anygen         50 passed  ✅   (40 unit + 10 e2e)
+notebooklm     21 passed  ✅   (21 unit + 0 e2e)
 comfyui        70 passed  ✅   (60 unit + 10 e2e)
+ollama         98 passed  ✅   (87 unit + 11 e2e)
 ──────────────────────────────────────────────────────────────────────────────
-TOTAL        1,588 passed  ✅   100% pass rate
+TOTAL        1,707 passed  ✅   100% pass rate
 ```
 
 ---
@@ -707,7 +723,8 @@ cli-anything/
 ├── 🧜 mermaid/agent-harness/            # Mermaid Live Editor CLI (10 tests)
 ├── ✨ anygen/agent-harness/             # AnyGen CLI (50 tests)
 ├── 🧠 notebooklm/agent-harness/         # NotebookLM CLI (experimental, 21 tests)
-└── 🖼️ comfyui/agent-harness/            # ComfyUI CLI (70 tests)
+├── 🖼️ comfyui/agent-harness/            # ComfyUI CLI (70 tests)
+└── 🦙 ollama/agent-harness/             # Ollama CLI (98 tests)
 ```
 
 Each `agent-harness/` contains an installable Python package under `cli_anything.<software>/` with Click CLI, core modules, utils (including `repl_skin.py` and backend wrapper), and comprehensive tests.
@@ -808,7 +825,7 @@ HARNESS.md is our definitive SOP for making any software agent-accessible via au
 
 It encodes proven patterns and methodologies refined through automated generation processes.
 
-The playbook distills key insights from successfully building all 13 diverse, production-ready harnesses.
+The playbook distills key insights from successfully building all 15 diverse, production-ready harnesses.
 
 ### Critical Lessons
 
@@ -933,7 +950,7 @@ MIT License — free to use, modify, and distribute.
 
 **CLI-Anything** — *Make any software with a codebase Agent-native.*
 
-<sub>A methodology for the age of AI agents | 13 professional software demos | 1,588 passing tests</sub>
+<sub>A methodology for the age of AI agents | 15 professional software demos | 1,707 passing tests</sub>
 
 <br>
 
