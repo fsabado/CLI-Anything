@@ -67,13 +67,13 @@ def go_back(session: "Session") -> dict:
         >>> go_back(session)
         {"url": "https://previous.com", "status": "navigated"}
     """
-    previous_url = session.go_back()
-    if previous_url is None:
-        return {"error": "No back history available"}
-
     use_daemon = session.daemon_mode
-    result = backend.open_url(previous_url, use_daemon=use_daemon)
-    session.set_url(previous_url, record_history=False)
+    result = backend.back(use_daemon=use_daemon)
+
+    # Update session state if backend returned a URL
+    if isinstance(result, dict) and "url" in result:
+        session.set_url(result["url"], record_history=False)
+
     return result
 
 
@@ -90,13 +90,13 @@ def go_forward(session: "Session") -> dict:
         >>> go_forward(session)
         {"url": "https://next.com", "status": "navigated"}
     """
-    next_url = session.go_forward()
-    if next_url is None:
-        return {"error": "No forward history available"}
-
     use_daemon = session.daemon_mode
-    result = backend.open_url(next_url, use_daemon=use_daemon)
-    session.set_url(next_url, record_history=False)
+    result = backend.forward(use_daemon=use_daemon)
+
+    # Update session state if backend returned a URL
+    if isinstance(result, dict) and "url" in result:
+        session.set_url(result["url"], record_history=False)
+
     return result
 
 
