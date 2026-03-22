@@ -43,6 +43,7 @@
 !/zoom/
 !/drawio/
 !/mermaid/
+!/comfyui/
 !/adguardhome/
 !/novita/
 !/ollama/
@@ -74,6 +75,8 @@
 /drawio/.*
 /mermaid/*
 /mermaid/.*
+/comfyui/*
+/comfyui/.*
 /adguardhome/*
 /adguardhome/.*
 /ollama/*
@@ -93,6 +96,7 @@
 !/zoom/agent-harness/
 !/drawio/agent-harness/
 !/mermaid/agent-harness/
+!/comfyui/agent-harness/
 !/adguardhome/agent-harness/
 !/novita/agent-harness/
 !/ollama/agent-harness/
